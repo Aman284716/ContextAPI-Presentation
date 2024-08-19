@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CounterProvider from './context/CounterProvider';
+import CounterDisplay from './components/CounterDisplay';
+import CounterButtons from './components/CounterButtons';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CounterProvider>
+      <div className="App">
+        <CounterDisplay />
+        <CounterButtons /> {/* Button Component 1*/}
+        <CounterButtons /> {/* Button Component 2*/}
+        <CounterButtons /> {/* Button Component 3*/}
+      </div>
+    </CounterProvider>
   );
-}
+};
 
 export default App;
